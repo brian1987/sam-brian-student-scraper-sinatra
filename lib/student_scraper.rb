@@ -42,9 +42,9 @@ class StudentScraper
     student_page.css('.top-page-title div img')[0].attributes["src"].value
   end
 
-  def parse_background_image(student_page)
-    student_page.css('style')[0].children[0].to_s[/\((.*?)\)/][1...-1]
-  end
+  # def parse_background_image(student_page)
+  #   student_page.css('style')[0].children[0].to_s[/\((.*?)\)/][1...-1]
+  # end
 
   def parse_quote(student_page)
     student_page.css('div.textwidget h3').text
@@ -72,7 +72,7 @@ class StudentScraper
       student = Student.find_or_create_by(:name => name)
 
       student.profile_image = parse_profile_image(student_page)
-      student.background_image = parse_background_image(student_page)
+      # student.background_image = parse_background_image(student_page)
 
       social_media  = parse_social_media(student_page)
       student.twitter = social_media[0]
