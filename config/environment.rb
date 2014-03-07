@@ -34,4 +34,13 @@ ActiveRecord::Base.establish_connection(
 # require_all is a gem that you pass it a directory
 # and it loads all .rb in there.
 # https://github.com/jarmo/require_all
+
 require_all 'app'
+
+
+# require_relative '../app/models/student.rb'
+# require_relative '../app/controllers/application_controller.rb'
+# require_relative '../app/controllers/students_controller.rb'
+
+
+
