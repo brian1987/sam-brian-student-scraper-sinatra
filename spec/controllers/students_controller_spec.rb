@@ -100,8 +100,47 @@ describe StudentsController do
 
   # This context should only be about testing the edit form.
   context 'GET /students/slug/edit' do
+    let(:student){Student.new.tap{|s| s.name = "Flatiron Student"}}
+    before do
+      # get '/students/edit/flatiron-student'
+    end
+    it 'responds with a 200' do
+      test_student = Student.new 
+      test_student.name = "Test Student"
+      test_student.save # executes the slugify. 
+      get '/students/test-student/edit'
+      
+
+      expect(last_response).to be_ok
+    end
+
+    it 'presents the edit student form' do 
+      test_student = Student.new 
+      test_student.name = "Test Student"
+      test_student.save # executes the slugify. 
+      get '/students/test-student/edit'
+      expect(last_response.body).to include('form action')
+    end 
+
+
   end
 
   context 'POST /students/slug' do
+    before do
+      test_student = Student.new 
+      test_student.name = "Test Student"
+      test_student.save # executes the slugify.
+
+      post '/students/test-student', {"student" => { 
+        "name" => "Tommy"
+      }}
+    end
+
+    it "redirects to the students index page" do
+      follow_redirect!
+      # expect(page).to have_content("List of all Movies")
+      # expect(last_response.location).to include('/movies')
+      expect(last_response.body).to include("Tommy")
+    end
   end
 end
