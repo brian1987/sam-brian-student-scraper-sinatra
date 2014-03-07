@@ -8,7 +8,7 @@ describe Student do
         # of the class being described.
         subject.name = "Avi Flombaum"
         subject.slugify!
-
+        
         expect(subject.slug).to eq('avi-flombaum')
       end
 

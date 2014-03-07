@@ -79,6 +79,23 @@ describe StudentsController do
   end
 
   context 'GET /students/slug' do
+    let(:student){Student.new.tap{|s| s.name = "Flatiron Student"}}
+    before do
+      # post '/students', {"student" => { 
+      #   "name" => "Tommy Boy"
+      # }}
+      # tommy = Student.create(:name => "Tommy Boy")
+      # student.slugify!
+      
+    end
+
+    it "shows an individual students' page" do 
+      test_student = Student.new 
+      test_student.name = "Test Student"
+      test_student.save # executes the slugify. 
+      get '/students/test-student'
+      expect(last_response).to be_ok
+    end
   end
 
   # This context should only be about testing the edit form.

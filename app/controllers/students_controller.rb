@@ -28,6 +28,7 @@ class StudentsController < ApplicationController
     erb :"students/show"
   end 
 
+  
 
   # GET '/students/avi-flombaum'
   # GET '/students/avi-flombaum/edit'
