@@ -47,9 +47,35 @@ describe StudentsController do
   end
   
   context 'GET /students/new' do
+    let(:student){Student.new.tap{|s| s.name = "Flatiron Student"}}
+    before do
+      get '/students/new'
+    end
+
+    it 'responds with a 200' do
+      expect(last_response).to be_ok
+    end
+
+    it 'presents the new student form' do 
+      expect(last_response.body).to include('form action')
+    end 
   end
   
   context 'POST /students' do
+
+    before do
+      post '/students', {"student" => { 
+        "name" => "Tommy"
+      }}
+    end
+
+    it "redirects to the students index page" do
+      follow_redirect!
+      # expect(page).to have_content("List of all Movies")
+      # expect(last_response.location).to include('/movies')
+      expect(last_response.body).to include("Tommy")
+    end
+  
   end
 
   context 'GET /students/slug' do
