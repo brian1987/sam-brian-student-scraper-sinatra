@@ -37,7 +37,7 @@ class StudentsController < ApplicationController
     @student = Student.find_by(:slug => params[:slug])
     
     @student.update(params[:student])
-    redirect '/'
+    redirect to '/'
   end 
 
   # GET '/students/avi-flombaum'
