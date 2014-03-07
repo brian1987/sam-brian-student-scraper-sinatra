@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2) do
     t.string   "github"
     t.string   "quote"
     t.string   "bio"
+    t.string   "work"
     t.string   "work_title"
     t.string   "education"
     t.datetime "created_at"

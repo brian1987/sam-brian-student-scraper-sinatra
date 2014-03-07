@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content ="width=device-width, minimum-scale=1.0, initial-scale=1.0">
   <title>The Flatiron School</title>
-  <link rel='stylesheet' href="css/styles.css" type='text/css' media='all' />
+  <link rel='stylesheet' href="css/style.css" type='text/css' media='all' />
   <link rel='stylesheet' href="css/style_teamhi5.css" type='text/css' media='all' />
 
   <!-- <link rel='stylesheet' href="css/style-dark.css" type='text/css' media='all' /> -->
@@ -27,7 +27,7 @@
         <div class="header-left">
           <h1 class="logo-text">
             <a href="/" title="The Flatiron School">
-              <img src="http://students.flatironschool.com/img/the-flatiron-school-logo-sm-black.png" class="logo">
+              <img src="img/the-flatiron-school-logo-sm-black.png" class="logo">
             </a>
           </h1>
         </div>
@@ -104,16 +104,16 @@
 
               <li class="home-blog-post">
                 <div class="blog-thumb">
-                  <a href="students/<%= s.slug %>">
-                    <!-- ../img/students/justinbelmont_profile.jpg -->
-                    <img width="304" height="304" class="prof-image" src="http://students.flatironschool.com/img/<%=s.profile_image %>" class="attachment-blog-thumb wp-post-image" alt="Justin Belmont"> 
+                  <a href="students/<%= s.slug %>.html">
+
+                    <img width="304" height="304" class="prof-image" src="http://students.flatironschool.com/img/students/justinbelmont_profile.jpg" class="attachment-blog-thumb wp-post-image" alt="Justin Belmont">
                   </a>
                 </div>
 
                 <div class="blog-title">
                   <div class="big-comment">
                     <h3>
-                      <a href="students/<%= s.slug %>"><%= s.name %></a>
+                      <a href="students/<%= s.slug %>.html"><%= s.name %></a>
                     </h3>
                   </div>
                   
@@ -133,7 +133,7 @@
         </div>
       </div>
       <!-- End Student Index -->
-<a href="/students/new"> <input type= "SUBMIT" value="create new student"> </a>
+
     </div>
     <div class="clear"></div>
     <!-- End Content -->
@@ -170,5 +170,3 @@
 
 </body>
 </html>
-
-
